@@ -16,9 +16,9 @@ import {
   Sparkles,
   Send,
 } from "lucide-react";
+import { NeuralBackground } from "@/components/NeuralBackground";
 import { CursorGlow } from "@/components/CursorGlow";
 import { Navbar } from "@/components/Navbar";
-import { FloatingBlobs } from "@/components/FloatingBlobs";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -57,7 +57,7 @@ function Index() {
         <Languages />
         <Contact />
       </main>
-      <footer className="border-t border-border/60 py-8 text-center text-xs text-muted-foreground">
+      <footer className="border-t border-border/40 py-8 text-center text-xs text-muted-foreground">
         © {new Date().getFullYear()} Maram Boughammoura · Crafted with care in Monastir, Tunisia
       </footer>
     </div>
@@ -81,7 +81,7 @@ function Reveal({ children, delay = 0 }: { children: ReactNode; delay?: number }
 }
 
 /* ---------- Hero ---------- */
-const ROLES = ["Data Engineer", "ML Engineer", "AI Builder", "I turn data into decisions"];
+const ROLES = ["Data Engineer", "ML Engineer", "AI Builder", "Problem Solver"];
 
 function Typewriter() {
   const [i, setI] = useState(0);
@@ -121,18 +121,18 @@ function Typewriter() {
 function Hero() {
   return (
     <section id="home" className="relative flex min-h-screen items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#f9f7ff] via-white to-white" />
-      <FloatingBlobs />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,oklch(0.22_0.06_290/0.6),transparent_60%)]" />
+      <NeuralBackground />
       <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-white/70 px-4 py-1.5 text-xs text-muted-foreground shadow-sm backdrop-blur"
+          className="mb-6 inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/40 px-4 py-1.5 text-xs text-muted-foreground backdrop-blur"
         >
           <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#4ecdc4] opacity-75" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-[#4ecdc4]" />
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[color:var(--teal)] opacity-75" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-[color:var(--teal)]" />
           </span>
           Available for internships · Summer 2026
         </motion.p>
@@ -152,7 +152,7 @@ function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-6 text-lg text-foreground/80 sm:text-xl"
+          className="mt-6 text-lg text-muted-foreground sm:text-xl"
         >
           I'm a <Typewriter />
         </motion.p>
@@ -161,9 +161,9 @@ function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.55 }}
-          className="mx-auto mt-4 max-w-xl text-base text-muted-foreground"
+          className="mt-3 text-sm text-muted-foreground"
         >
-          Building intelligent systems, end to end.
+          Data Engineering & AI Student · ENET'Com, Sfax
         </motion.p>
 
         <motion.div
@@ -174,15 +174,15 @@ function Hero() {
         >
           <a
             href="#projects"
-            className="group relative overflow-hidden rounded-full bg-gradient-to-r from-[#7f77dd] to-[#4ecdc4] px-7 py-3 text-sm font-medium text-white shadow-[0_10px_30px_-10px_rgba(127,119,221,0.55)] transition-all hover:scale-[1.03] hover:shadow-[0_14px_40px_-10px_rgba(127,119,221,0.7)]"
+            className="group relative overflow-hidden rounded-full bg-gradient-to-r from-[color:var(--purple)] to-[color:var(--teal)] px-7 py-3 text-sm font-medium text-background transition-transform hover:scale-[1.03]"
           >
             <span className="relative z-10">View My Work</span>
           </a>
           <a
             href="#contact"
-            className="rounded-full border border-border bg-white/80 px-7 py-3 text-sm font-medium shadow-sm backdrop-blur transition-all hover:-translate-y-0.5 hover:border-[#7f77dd] hover:shadow-md"
+            className="rounded-full border border-border bg-card/40 px-7 py-3 text-sm font-medium backdrop-blur transition-all hover:border-[color:var(--purple)] hover:bg-card/70"
           >
-            Let's Talk
+            Contact Me
           </a>
         </motion.div>
       </div>
@@ -224,8 +224,8 @@ function Counter({ to, label }: { to: number; label: string }) {
   }, [inView, mv, to]);
 
   return (
-    <div className="soft-card p-6 text-center hover-glow">
-      <span ref={ref} className="font-display text-4xl font-bold text-[#7f77dd] sm:text-5xl">
+    <div className="rounded-2xl border border-border/60 bg-card/40 p-6 text-center backdrop-blur hover-glow">
+      <span ref={ref} className="font-display text-4xl font-bold text-gradient sm:text-5xl">
         {val}
       </span>
       <p className="mt-2 text-sm text-muted-foreground">{label}</p>
@@ -235,7 +235,7 @@ function Counter({ to, label }: { to: number; label: string }) {
 
 function About() {
   return (
-    <section id="about" className="relative bg-[#f9f7ff] px-6 py-32">
+    <section id="about" className="relative px-6 py-32">
       <div className="mx-auto max-w-5xl">
         <Reveal>
           <SectionLabel>01 — About</SectionLabel>
@@ -246,23 +246,21 @@ function About() {
 
         <div className="mt-10 grid gap-8 md:grid-cols-[1.4fr_1fr] md:items-start">
           <Reveal delay={0.1}>
-            <div className="soft-card p-8">
-              <p className="text-lg leading-relaxed text-foreground/85">
-                I'm a second-year Data Engineering student at <span className="font-semibold text-foreground">ENET'Com, Sfax</span>.
-                I build things — NLP pipelines, computer vision systems, optimization solvers.
-                I don't wait to learn, I learn by building. Currently looking for an internship where I can take on real challenges in <span className="font-semibold text-foreground">ML, Data Engineering, or AI</span>.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-4 text-sm text-muted-foreground">
-                <span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4 text-[#7f77dd]" /> Monastir, Tunisia</span>
-                <span className="inline-flex items-center gap-2"><Mail className="h-4 w-4 text-[#4ecdc4]" /> maram2.boughammoura@gmail.com</span>
-              </div>
+            <p className="text-lg leading-relaxed text-muted-foreground">
+              Second-year Data Engineering student at <span className="text-foreground">ENET'Com, Sfax</span>.
+              I build end-to-end AI solutions — from transformer-based NLP pipelines to optimization solvers.
+              Actively seeking an internship in <span className="text-foreground">ML, Data Engineering, or AI</span>.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-4 text-sm text-muted-foreground">
+              <span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4" /> Monastir, Tunisia</span>
+              <span className="inline-flex items-center gap-2"><Mail className="h-4 w-4" /> maram2.boughammoura@gmail.com</span>
             </div>
           </Reveal>
 
           <Reveal delay={0.2}>
             <div className="grid grid-cols-3 gap-3">
               <Counter to={3} label="Projects" />
-              <Counter to={3} label="Languages" />
+              <Counter to={2} label="Languages" />
               <Counter to={1} label="Internship" />
             </div>
           </Reveal>
@@ -274,7 +272,7 @@ function About() {
 
 function SectionLabel({ children }: { children: ReactNode }) {
   return (
-    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-[#7f77dd]">
+    <p className="mb-3 text-xs font-medium uppercase tracking-[0.25em] text-[color:var(--teal)]">
       {children}
     </p>
   );
@@ -283,13 +281,13 @@ function SectionLabel({ children }: { children: ReactNode }) {
 /* ---------- Skills ---------- */
 const SKILL_GROUPS = [
   { icon: Code2, title: "Languages", items: ["Python", "SQL", "JavaScript", "C", "Java"] },
-  { icon: Brain, title: "ML / Data Science", items: ["scikit-learn", "XGBoost", "Random Forest", "SVM", "KNN", "Logistic Regression"] },
+  { icon: Brain, title: "ML / Data Science", items: ["scikit-learn", "XGBoost", "Random Forest", "SVM", "KNN"] },
   { icon: Sparkles, title: "Deep Learning / NLP", items: ["TensorFlow", "PyTorch", "Hugging Face Transformers"] },
   { icon: Eye, title: "Computer Vision", items: ["OpenCV", "DeepFace"] },
   { icon: Database, title: "Data & Visualization", items: ["Pandas", "NumPy", "SciPy", "Matplotlib", "Seaborn"] },
-  { icon: Rocket, title: "Deployment / APIs", items: ["Flask", "Streamlit", "REST API design"] },
+  { icon: Rocket, title: "Deployment / APIs", items: ["Flask", "Streamlit", "REST API"] },
   { icon: Database, title: "Databases", items: ["SQL", "MySQL", "MongoDB"] },
-  { icon: Wrench, title: "Tools", items: ["Git", "VS Code", "Jupyter Notebook", "Google OR-Tools"] },
+  { icon: Wrench, title: "Tools", items: ["Git", "VS Code", "Jupyter", "Google OR-Tools"] },
 ];
 
 function Skills() {
@@ -306,8 +304,8 @@ function Skills() {
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {SKILL_GROUPS.map((g, idx) => (
             <Reveal key={g.title} delay={idx * 0.05}>
-              <div className="group soft-card h-full p-6 hover-glow">
-                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#7f77dd]/15 to-[#4ecdc4]/15 text-[#7f77dd]">
+              <div className="group h-full rounded-2xl border border-border/60 bg-card/40 p-6 backdrop-blur hover-glow">
+                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[color:var(--purple)]/20 to-[color:var(--teal)]/20 text-[color:var(--teal)]">
                   <g.icon className="h-5 w-5" />
                 </div>
                 <h3 className="mb-3 font-display text-base font-semibold">{g.title}</h3>
@@ -315,7 +313,7 @@ function Skills() {
                   {g.items.map((s) => (
                     <span
                       key={s}
-                      className="rounded-full bg-[#f4f1ff] px-3 py-1 text-xs font-medium text-[#5b54a8] transition-all hover:-translate-y-0.5 hover:bg-[#e8e3ff] hover:shadow-sm"
+                      className="rounded-full border border-border/60 bg-background/40 px-3 py-1 text-xs text-muted-foreground transition-all hover:border-[color:var(--purple)] hover:text-foreground hover:shadow-[0_0_12px_oklch(0.65_0.18_290/0.5)]"
                     >
                       {s}
                     </span>
@@ -336,27 +334,24 @@ const PROJECTS = [
     title: "Intelligent Route Planning Agent (VRP)",
     period: "Dec 2025 – Apr 2026",
     tag: "Final Year Project",
-    accent: "#7f77dd",
     description:
-      "Modular Python pipeline solving real-world Vehicle Routing Problems — capacity limits, time windows, multi-depot scenarios. Built an LLM-powered natural language constraint parser so non-technical users describe routing rules in plain text. Streamlit interface with map visualizations and route export.",
+      "Modular Python pipeline solving real-world Vehicle Routing Problems with capacity limits, time windows, and multi-depot scenarios. Integrated Google OR-Tools + an LLM-powered natural language constraint parser. Streamlit interface with map visualizations.",
     tech: ["Python", "KMeans", "Google OR-Tools", "LLM", "Streamlit"],
   },
   {
     title: "Facial Recognition Attendance System",
     period: "Sept – Nov 2025",
     tag: "Web Application",
-    accent: "#4ecdc4",
     description:
-      "Real-time attendance system using facial recognition (OpenCV + DeepFace) to automatically classify presence, lateness, and absence. Admin dashboard in PHP + JavaScript for live monitoring and corrections.",
+      "Real-time attendance system using facial recognition (OpenCV + DeepFace) to automate presence/lateness/absence classification. Admin dashboard built with PHP + JavaScript.",
     tech: ["OpenCV", "DeepFace", "PHP", "JavaScript"],
   },
   {
-    title: "AI Chatbot for Salesforce Opportunity Management",
+    title: "AI Chatbot for Salesforce",
     period: "June – Aug 2025",
-    tag: "Internship · Draexlmaier · Sousse",
-    accent: "#ff6b6b",
+    tag: "Internship · Draexlmaier",
     description:
-      "NLP chatbot using BERT and BART (Hugging Face) to automate Salesforce queries — intent classification and named-entity extraction for companies and deals. Flask REST API backend with real-time web interface.",
+      "NLP chatbot using BERT and BART (Hugging Face) for Salesforce opportunity management — intent classification + named-entity extraction. Flask REST API backend with real-time web interface.",
     tech: ["BERT", "BART", "Hugging Face", "Flask", "REST API"],
   },
 ];
@@ -376,16 +371,13 @@ function Projects() {
           {PROJECTS.map((p, idx) => (
             <Reveal key={p.title} delay={idx * 0.1}>
               <motion.article
-                whileHover={{ y: -8, scale: 1.015 }}
+                whileHover={{ y: -6 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="group soft-card relative flex h-full flex-col overflow-hidden p-6 hover-glow"
+                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border/60 bg-card/40 p-6 backdrop-blur hover-glow"
               >
-                <div className="absolute inset-x-0 top-0 h-1" style={{ background: p.accent }} />
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[color:var(--purple)]/60 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                 <div className="mb-4 flex items-center justify-between text-xs">
-                  <span
-                    className="rounded-full px-3 py-1 font-medium"
-                    style={{ background: `${p.accent}1a`, color: p.accent }}
-                  >
+                  <span className="rounded-full border border-[color:var(--teal)]/40 bg-[color:var(--teal)]/10 px-3 py-1 text-[color:var(--teal)]">
                     {p.tag}
                   </span>
                   <span className="text-muted-foreground">{p.period}</span>
@@ -394,7 +386,7 @@ function Projects() {
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {p.tech.map((t) => (
-                    <span key={t} className="rounded-md bg-[#f4f1ff] px-2 py-1 text-[11px] font-medium text-[#5b54a8]">
+                    <span key={t} className="rounded-md bg-background/60 px-2 py-1 text-[11px] text-muted-foreground">
                       {t}
                     </span>
                   ))}
@@ -411,14 +403,14 @@ function Projects() {
 /* ---------- Education ---------- */
 const EDU = [
   { school: "ENET'Com", detail: "Engineering Degree — Data Engineering & Decisional Systems", period: "Sept 2024 – Present" },
-  { school: "Preparatory Institute for Engineering Studies, Monastir", detail: "Physics-Chemistry Cycle", period: "Sept 2023 – June 2024" },
-  { school: "Preparatory Institute for Engineering Studies, Tunis", detail: "Physics-Chemistry Cycle", period: "Sept 2022 – June 2023" },
-  { school: "Bourguiba High School, Monastir", detail: "Baccalaureate", period: "Sept 2018 – June 2022" },
+  { school: "Preparatory Institute Monastir", detail: "Maths-Physics Preparatory Cycle", period: "Sept 2023 – June 2024" },
+  { school: "Preparatory Institute Tunis", detail: "Maths-Physics Preparatory Cycle", period: "Sept 2022 – June 2023" },
+  { school: "Bourguiba High School Monastir", detail: "Baccalaureate", period: "2018 – 2022" },
 ];
 
 function Education() {
   return (
-    <section id="education" className="relative bg-[#f0eeff] px-6 py-32">
+    <section id="education" className="relative px-6 py-32">
       <div className="mx-auto max-w-4xl">
         <Reveal>
           <SectionLabel>04 — Education</SectionLabel>
@@ -434,16 +426,13 @@ function Education() {
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: "easeOut" }}
             style={{ transformOrigin: "top" }}
-            className="absolute left-2 top-2 h-[calc(100%-1rem)] w-0.5 bg-gradient-to-b from-[#7f77dd] via-[#4ecdc4] to-transparent"
+            className="absolute left-2 top-2 h-[calc(100%-1rem)] w-px bg-gradient-to-b from-[color:var(--purple)] via-[color:var(--teal)] to-transparent"
           />
           <div className="space-y-10">
             {EDU.map((e, idx) => (
               <Reveal key={e.school} delay={idx * 0.08}>
                 <div className="relative">
-                  <span className="absolute -left-[29px] top-2 flex h-4 w-4 items-center justify-center">
-                    <span className="absolute h-4 w-4 animate-ping rounded-full bg-[#7f77dd]/40" />
-                    <span className="relative h-3 w-3 rounded-full bg-[#7f77dd] shadow-[0_0_0_4px_white]" />
-                  </span>
+                  <span className="absolute -left-[27px] top-2 h-3 w-3 rounded-full bg-[color:var(--teal)] shadow-[0_0_12px_oklch(0.78_0.12_190/0.8)]" />
                   <p className="text-xs text-muted-foreground">{e.period}</p>
                   <h3 className="mt-1 font-display text-lg font-semibold">{e.school}</h3>
                   <p className="text-sm text-muted-foreground">{e.detail}</p>
@@ -464,13 +453,13 @@ function Extracurricular() {
       icon: Users,
       title: "HR Officer — GDSC ENET'Com",
       period: "2025 – 2026",
-      desc: "Organized technical workshops, community events, and hackathons. Managed recruitment and onboarding within a multidisciplinary student team.",
+      desc: "Organized workshops and hackathons; led recruitment and member management for the Google Developer Student Club.",
     },
     {
       icon: GraduationCap,
       title: "IEEE Active Member",
       period: "2024 – 2025",
-      desc: "Competed in IEEE Xtreme 18.0 — a 24-hour global programming contest under strict time pressure.",
+      desc: "Competed in IEEE Xtreme 18.0 — a 24-hour global programming contest. Active community involvement.",
     },
   ];
   return (
@@ -485,8 +474,8 @@ function Extracurricular() {
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {items.map((it, i) => (
             <Reveal key={it.title} delay={i * 0.1}>
-              <div className="soft-card h-full p-6 hover-glow">
-                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#7f77dd]/15 to-[#4ecdc4]/15 text-[#7f77dd]">
+              <div className="h-full rounded-2xl border border-border/60 bg-card/40 p-6 backdrop-blur hover-glow">
+                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[color:var(--purple)]/20 to-[color:var(--teal)]/20 text-[color:var(--purple)]">
                   <it.icon className="h-5 w-5" />
                 </div>
                 <h3 className="font-display text-lg font-semibold">{it.title}</h3>
@@ -515,11 +504,11 @@ function Ring({ value }: { value: number }) {
   const offset = C - (C * value) / 100;
   return (
     <svg viewBox="0 0 100 100" className="h-32 w-32 -rotate-90">
-      <circle cx="50" cy="50" r="42" stroke="#ece9ff" strokeWidth="8" fill="none" />
+      <circle cx="50" cy="50" r="42" stroke="oklch(0.28 0.03 280)" strokeWidth="6" fill="none" />
       <motion.circle
         ref={ref}
         cx="50" cy="50" r="42"
-        stroke="url(#grad)" strokeWidth="8" fill="none" strokeLinecap="round"
+        stroke="url(#grad)" strokeWidth="6" fill="none" strokeLinecap="round"
         strokeDasharray={C}
         initial={{ strokeDashoffset: C }}
         animate={inView ? { strokeDashoffset: offset } : {}}
@@ -527,8 +516,8 @@ function Ring({ value }: { value: number }) {
       />
       <defs>
         <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#7f77dd" />
-          <stop offset="100%" stopColor="#4ecdc4" />
+          <stop offset="0%" stopColor="oklch(0.65 0.18 290)" />
+          <stop offset="100%" stopColor="oklch(0.78 0.12 190)" />
         </linearGradient>
       </defs>
     </svg>
@@ -537,7 +526,7 @@ function Ring({ value }: { value: number }) {
 
 function Languages() {
   return (
-    <section id="languages" className="relative bg-[#f9f7ff] px-6 py-32">
+    <section id="languages" className="relative px-6 py-32">
       <div className="mx-auto max-w-5xl">
         <Reveal>
           <SectionLabel>06 — Languages</SectionLabel>
@@ -548,10 +537,10 @@ function Languages() {
         <div className="mt-12 grid gap-8 sm:grid-cols-3">
           {LANGS.map((l, i) => (
             <Reveal key={l.name} delay={i * 0.1}>
-              <div className="soft-card flex flex-col items-center p-8 hover-glow">
+              <div className="flex flex-col items-center rounded-2xl border border-border/60 bg-card/40 p-8 backdrop-blur hover-glow">
                 <div className="relative">
                   <Ring value={l.value} />
-                  <div className="absolute inset-0 flex items-center justify-center font-display text-2xl font-bold text-[#7f77dd]">
+                  <div className="absolute inset-0 flex items-center justify-center font-display text-2xl font-bold">
                     {l.value}%
                   </div>
                 </div>
@@ -574,16 +563,15 @@ function Contact() {
       id="contact"
       className="relative overflow-hidden px-6 py-32"
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-[#f0eeff] via-[#f9f7ff] to-white" />
-      <FloatingBlobs />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,oklch(0.22_0.06_190/0.5),transparent_70%)]" />
       <div className="relative mx-auto max-w-3xl">
         <Reveal>
           <SectionLabel>07 — Contact</SectionLabel>
           <h2 className="font-display text-3xl font-bold sm:text-4xl md:text-5xl">
             Let's <span className="text-gradient">build something.</span>
           </h2>
-          <p className="mt-4 text-foreground/75">
-            Have a project in mind? An internship opportunity? Let's talk.
+          <p className="mt-4 text-muted-foreground">
+            Open to internships, collaborations and interesting conversations.
           </p>
         </Reveal>
 
@@ -591,14 +579,14 @@ function Contact() {
           <div className="mt-8 flex flex-wrap gap-4">
             <a
               href="mailto:maram2.boughammoura@gmail.com"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-5 py-2.5 text-sm shadow-sm transition-all hover:-translate-y-0.5 hover:border-[#7f77dd] hover:shadow-md"
+              className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-5 py-2.5 text-sm backdrop-blur hover-glow"
             >
-              <Mail className="h-4 w-4 text-[#4ecdc4]" /> maram2.boughammoura@gmail.com
+              <Mail className="h-4 w-4 text-[color:var(--teal)]" /> maram2.boughammoura@gmail.com
             </a>
             <a
               href="https://www.linkedin.com/in/maram-boughammoura-492a62338/"
               target="_blank" rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-5 py-2.5 text-sm shadow-sm transition-all hover:-translate-y-0.5 hover:border-[#7f77dd] hover:shadow-md"
+              className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-5 py-2.5 text-sm backdrop-blur hover-glow"
             >
               <LinkedinIcon /> LinkedIn
             </a>
@@ -615,7 +603,7 @@ function Contact() {
               window.location.href = `mailto:maram2.boughammoura@gmail.com?subject=${subject}&body=${body}`;
               setSent(true);
             }}
-            className="mt-10 soft-card space-y-4 p-6 sm:p-8"
+            className="mt-10 space-y-4 rounded-2xl border border-border/60 bg-card/40 p-6 backdrop-blur sm:p-8"
           >
             <div className="grid gap-4 sm:grid-cols-2">
               <Field name="name" label="Name" />
@@ -624,7 +612,7 @@ function Contact() {
             <Field name="message" label="Message" textarea />
             <button
               type="submit"
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#7f77dd] to-[#4ecdc4] px-6 py-2.5 text-sm font-medium text-white shadow-[0_10px_30px_-10px_rgba(127,119,221,0.55)] transition-all hover:scale-[1.03] hover:shadow-[0_14px_40px_-10px_rgba(127,119,221,0.7)]"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[color:var(--purple)] to-[color:var(--teal)] px-6 py-2.5 text-sm font-medium text-background transition-transform hover:scale-[1.03]"
             >
               {sent ? "Opening mail…" : "Send Message"} <Send className="h-4 w-4" />
             </button>
@@ -639,7 +627,7 @@ function Field({
   name, label, type = "text", textarea = false,
 }: { name: string; label: string; type?: string; textarea?: boolean }) {
   const cls =
-    "peer w-full rounded-lg border border-border bg-[#fbfaff] px-4 pb-2 pt-5 text-sm outline-none transition-all placeholder-transparent focus:border-[#7f77dd] focus:bg-white focus:shadow-[0_0_0_3px_rgba(127,119,221,0.15)]";
+    "peer w-full rounded-lg border border-border/60 bg-background/40 px-4 pb-2 pt-5 text-sm outline-none transition-all placeholder-transparent focus:border-[color:var(--purple)] focus:shadow-[0_0_0_3px_oklch(0.65_0.18_290/0.15)]";
   return (
     <label className="relative block">
       {textarea ? (
@@ -656,7 +644,7 @@ function Field({
 
 function LinkedinIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4 text-[#7f77dd]" aria-hidden>
+    <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4 text-[color:var(--purple)]" aria-hidden>
       <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.3c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21h-4V9z" />
     </svg>
   );
