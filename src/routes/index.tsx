@@ -16,7 +16,6 @@ import {
   Sparkles,
   Send,
 } from "lucide-react";
-import { NeuralBackground } from "@/components/NeuralBackground";
 import { CursorGlow } from "@/components/CursorGlow";
 import { Navbar } from "@/components/Navbar";
 import { FloatingBlobs } from "@/components/FloatingBlobs";
