@@ -3,7 +3,6 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
 import {
   Mail,
-  Linkedin,
   MapPin,
   ArrowDown,
   Code2,
@@ -589,7 +588,7 @@ function Contact() {
               target="_blank" rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-5 py-2.5 text-sm backdrop-blur hover-glow"
             >
-              <Linkedin className="h-4 w-4 text-[color:var(--purple)]" /> LinkedIn
+              <LinkedinIcon /> LinkedIn
             </a>
           </div>
         </Reveal>
