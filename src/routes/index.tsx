@@ -46,8 +46,12 @@ function Index() {
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
       <CursorGlow />
+      <div aria-hidden className="pointer-events-none fixed inset-0 z-0">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,oklch(0.22_0.06_290/0.6),transparent_60%)]" />
+        <NeuralBackground />
+      </div>
       <Navbar />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <About />
         <Skills />
@@ -121,8 +125,6 @@ function Typewriter() {
 function Hero() {
   return (
     <section id="home" className="relative flex min-h-screen items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,oklch(0.22_0.06_290/0.6),transparent_60%)]" />
-      <NeuralBackground />
       <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
         <motion.p
           initial={{ opacity: 0 }}
@@ -260,7 +262,7 @@ function About() {
           <Reveal delay={0.2}>
             <div className="grid grid-cols-3 gap-3">
               <Counter to={3} label="Projects" />
-              <Counter to={2} label="Languages" />
+              <Counter to={3} label="Languages" />
               <Counter to={1} label="Internship" />
             </div>
           </Reveal>
@@ -403,8 +405,8 @@ function Projects() {
 /* ---------- Education ---------- */
 const EDU = [
   { school: "ENET'Com", detail: "Engineering Degree — Data Engineering & Decisional Systems", period: "Sept 2024 – Present" },
-  { school: "Preparatory Institute Monastir", detail: "Maths-Physics Preparatory Cycle", period: "Sept 2023 – June 2024" },
-  { school: "Preparatory Institute Tunis", detail: "Maths-Physics Preparatory Cycle", period: "Sept 2022 – June 2023" },
+  { school: "Preparatory Institute Monastir", detail: "Physics-Chemistry Preparatory Cycle", period: "Sept 2023 – June 2024" },
+  { school: "Preparatory Institute Tunis", detail: "Physics-Chemistry Preparatory Cycle", period: "Sept 2022 – June 2023" },
   { school: "Bourguiba High School Monastir", detail: "Baccalaureate", period: "2018 – 2022" },
 ];
 
