@@ -147,5 +147,19 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
+  html { scroll-behavior: smooth; }
+  .font-display { font-family: 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em; }
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .glow-purple { box-shadow: var(--shadow-glow); }
+  .glow-teal { box-shadow: var(--shadow-glow-teal); }
+  .hover-glow { transition: box-shadow .3s ease, transform .3s ease, border-color .3s ease; }
+  .hover-glow:hover { box-shadow: var(--shadow-glow); transform: translateY(-2px); border-color: var(--purple); }
 }
