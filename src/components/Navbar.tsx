@@ -86,6 +86,14 @@ export function Navbar() {
               </button>
             </li>
           ))}
+          <li>
+            <a
+              href="#"
+              className="flex items-center gap-2 py-2 text-sm text-muted-foreground"
+            >
+              <Download className="h-3.5 w-3.5" /> Download CV
+            </a>
+          </li>
         </ul>
       )}
     </header>
