@@ -188,7 +188,9 @@ function Hero() {
             Contact Me
           </a>
           <a
-            href="#"
+            href="https://drive.google.com/uc?export=download&id=1lXdcIc4o9-yDjp5GFsHPiIISKGfpS0Xz"
+            target="_blank"
+            rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-border bg-card/40 px-7 py-3 text-sm font-medium backdrop-blur transition-all hover:border-[color:var(--purple)] hover:bg-card/70"
           >
             <Download className="h-4 w-4" /> Download CV
@@ -567,7 +569,9 @@ function Contact() {
               <LinkedinIcon /> LinkedIn
             </a>
             <a
-              href="#"
+              href="https://drive.google.com/uc?export=download&id=1lXdcIc4o9-yDjp5GFsHPiIISKGfpS0Xz"
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-5 py-2.5 text-sm backdrop-blur hover-glow"
             >
               <Download className="h-4 w-4 text-[color:var(--purple)]" /> Download CV
