@@ -187,6 +187,12 @@ function Hero() {
           >
             Contact Me
           </a>
+          <a
+            href="#"
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-card/40 px-7 py-3 text-sm font-medium backdrop-blur transition-all hover:border-[color:var(--purple)] hover:bg-card/70"
+          >
+            <Download className="h-4 w-4" /> Download CV
+          </a>
         </motion.div>
       </div>
 
