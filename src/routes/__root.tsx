@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Maram's Portfolio" },
+      { name: "description", content: "A premium, animated personal portfolio website showcasing Maram Boughammoura's expertise in Data Engineering and AI." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Maram's Portfolio" },
+      { property: "og:description", content: "A premium, animated personal portfolio website showcasing Maram Boughammoura's expertise in Data Engineering and AI." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Maram's Portfolio" },
+      { name: "twitter:description", content: "A premium, animated personal portfolio website showcasing Maram Boughammoura's expertise in Data Engineering and AI." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ad74f54f-8fc9-43ca-bc28-c34123c3947b/id-preview-1359d52a--a1dd69b0-1b89-4729-9ab1-4f6cfc21becb.lovable.app-1780652953528.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ad74f54f-8fc9-43ca-bc28-c34123c3947b/id-preview-1359d52a--a1dd69b0-1b89-4729-9ab1-4f6cfc21becb.lovable.app-1780652953528.png" },
     ],
     links: [
       {
