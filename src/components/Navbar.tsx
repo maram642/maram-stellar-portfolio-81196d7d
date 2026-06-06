@@ -90,7 +90,9 @@ export function Navbar() {
           ))}
           <li>
             <a
-              href="#"
+              href="https://drive.google.com/uc?export=download&id=1lXdcIc4o9-yDjp5GFsHPiIISKGfpS0Xz"
+              target="_blank"
+              rel="noreferrer"
               className="flex items-center gap-2 py-2 text-sm text-muted-foreground"
             >
               <Download className="h-3.5 w-3.5" /> Download CV
