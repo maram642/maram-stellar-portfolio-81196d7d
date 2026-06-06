@@ -1,3 +1,4 @@
+import { Download } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const sections = [
@@ -57,6 +58,12 @@ export function Navbar() {
             </li>
           ))}
         </ul>
+        <a
+          href="#"
+          className="hidden md:inline-flex items-center gap-1.5 rounded-full border border-border/60 bg-card/40 px-4 py-2 text-xs font-medium backdrop-blur transition-all hover:border-[color:var(--purple)] hover:bg-card/70"
+        >
+          <Download className="h-3.5 w-3.5" /> CV
+        </a>
         <button
           className="md:hidden text-sm text-muted-foreground"
           onClick={() => setOpen((o) => !o)}
@@ -79,6 +86,14 @@ export function Navbar() {
               </button>
             </li>
           ))}
+          <li>
+            <a
+              href="#"
+              className="flex items-center gap-2 py-2 text-sm text-muted-foreground"
+            >
+              <Download className="h-3.5 w-3.5" /> Download CV
+            </a>
+          </li>
         </ul>
       )}
     </header>
