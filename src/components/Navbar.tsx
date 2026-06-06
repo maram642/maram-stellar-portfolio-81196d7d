@@ -58,6 +58,12 @@ export function Navbar() {
             </li>
           ))}
         </ul>
+        <a
+          href="#"
+          className="hidden md:inline-flex items-center gap-1.5 rounded-full border border-border/60 bg-card/40 px-4 py-2 text-xs font-medium backdrop-blur transition-all hover:border-[color:var(--purple)] hover:bg-card/70"
+        >
+          <Download className="h-3.5 w-3.5" /> CV
+        </a>
         <button
           className="md:hidden text-sm text-muted-foreground"
           onClick={() => setOpen((o) => !o)}
