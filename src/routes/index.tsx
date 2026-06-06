@@ -566,6 +566,12 @@ function Contact() {
             >
               <LinkedinIcon /> LinkedIn
             </a>
+            <a
+              href="#"
+              className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-5 py-2.5 text-sm backdrop-blur hover-glow"
+            >
+              <Download className="h-4 w-4 text-[color:var(--purple)]" /> Download CV
+            </a>
           </div>
         </Reveal>
 
