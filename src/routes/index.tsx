@@ -495,37 +495,10 @@ function Extracurricular() {
 
 /* ---------- Languages ---------- */
 const LANGS = [
-  { name: "Arabic", level: "Native", value: 100 },
-  { name: "French", level: "Fluent", value: 90 },
-  { name: "English", level: "Professional", value: 80 },
+  { name: "🇹🇳 Arabic", level: "Native" },
+  { name: "🇫🇷 French", level: "Fluent" },
+  { name: "🇬🇧 English", level: "Professional" },
 ];
-
-function Ring({ value }: { value: number }) {
-  const ref = useRef<SVGCircleElement>(null);
-  const inView = useInView(ref, { once: true });
-  const C = 2 * Math.PI * 42;
-  const offset = C - (C * value) / 100;
-  return (
-    <svg viewBox="0 0 100 100" className="h-32 w-32 -rotate-90">
-      <circle cx="50" cy="50" r="42" stroke="oklch(0.28 0.03 280)" strokeWidth="6" fill="none" />
-      <motion.circle
-        ref={ref}
-        cx="50" cy="50" r="42"
-        stroke="url(#grad)" strokeWidth="6" fill="none" strokeLinecap="round"
-        strokeDasharray={C}
-        initial={{ strokeDashoffset: C }}
-        animate={inView ? { strokeDashoffset: offset } : {}}
-        transition={{ duration: 1.5, ease: "easeOut" }}
-      />
-      <defs>
-        <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="oklch(0.65 0.18 290)" />
-          <stop offset="100%" stopColor="oklch(0.78 0.12 190)" />
-        </linearGradient>
-      </defs>
-    </svg>
-  );
-}
 
 function Languages() {
   return (
@@ -537,18 +510,12 @@ function Languages() {
             Speaking <span className="text-gradient">three worlds.</span>
           </h2>
         </Reveal>
-        <div className="mt-12 grid gap-8 sm:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-3">
           {LANGS.map((l, i) => (
             <Reveal key={l.name} delay={i * 0.1}>
-              <div className="flex flex-col items-center rounded-2xl border border-border/60 bg-card/40 p-8 backdrop-blur hover-glow">
-                <div className="relative">
-                  <Ring value={l.value} />
-                  <div className="absolute inset-0 flex items-center justify-center font-display text-2xl font-bold">
-                    {l.value}%
-                  </div>
-                </div>
-                <h3 className="mt-4 font-display text-lg font-semibold">{l.name}</h3>
-                <p className="text-sm text-muted-foreground">{l.level}</p>
+              <div className="flex h-full flex-col items-center justify-center rounded-2xl border border-border/60 bg-card/40 p-8 text-center backdrop-blur hover-glow">
+                <h3 className="font-display text-xl font-semibold">{l.name}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{l.level}</p>
               </div>
             </Reveal>
           ))}
