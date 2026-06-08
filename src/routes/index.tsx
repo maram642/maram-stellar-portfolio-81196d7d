@@ -86,7 +86,7 @@ function Reveal({ children, delay = 0 }: { children: ReactNode; delay?: number }
 }
 
 /* ---------- Hero ---------- */
-const ROLES = ["Data Engineer", "ML Engineer", "AI Builder", "Problem Solver"];
+const ROLES = ["Data Engineer", "ML Engineer", "AI Builder"];
 
 function Typewriter() {
   const [i, setI] = useState(0);
@@ -188,9 +188,10 @@ function Hero() {
             Contact Me
           </a>
           <a
-            href="https://drive.google.com/uc?export=download&id=1lXdcIc4o9-yDjp5GFsHPiIISKGfpS0Xz"
+            href="https://raw.githubusercontent.com/maram642/cv/main/Maram_Boughammoura_CV.pdf"
             target="_blank"
             rel="noreferrer"
+            download="Maram_Boughammoura_CV.pdf"
             className="inline-flex items-center gap-2 rounded-full border border-border bg-card/40 px-7 py-3 text-sm font-medium backdrop-blur transition-all hover:border-[color:var(--purple)] hover:bg-card/70"
           >
             <Download className="h-4 w-4" /> Download CV
@@ -569,9 +570,10 @@ function Contact() {
               <LinkedinIcon /> LinkedIn
             </a>
             <a
-              href="https://drive.google.com/uc?export=download&id=1lXdcIc4o9-yDjp5GFsHPiIISKGfpS0Xz"
+              href="https://raw.githubusercontent.com/maram642/cv/main/Maram_Boughammoura_CV.pdf"
               target="_blank"
               rel="noreferrer"
+              download="Maram_Boughammoura_CV.pdf"
               className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-5 py-2.5 text-sm backdrop-blur hover-glow"
             >
               <Download className="h-4 w-4 text-[color:var(--purple)]" /> Download CV
