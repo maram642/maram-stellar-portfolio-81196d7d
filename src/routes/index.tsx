@@ -60,6 +60,7 @@ function Index() {
         <Skills />
         <Projects />
         <Education />
+        <Certifications />
         <Extracurricular />
         <Languages />
         <Contact />
