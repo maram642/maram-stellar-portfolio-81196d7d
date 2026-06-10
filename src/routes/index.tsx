@@ -572,7 +572,7 @@ function Languages() {
     <section id="languages" className="relative px-6 py-32">
       <div className="mx-auto max-w-5xl">
         <Reveal>
-          <SectionLabel>06 — Languages</SectionLabel>
+          <SectionLabel>07 — Languages</SectionLabel>
           <h2 className="font-display text-3xl font-bold sm:text-4xl md:text-5xl">
             Speaking <span className="text-gradient">three worlds.</span>
           </h2>
@@ -603,7 +603,7 @@ function Contact() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,oklch(0.22_0.06_190/0.5),transparent_70%)]" />
       <div className="relative mx-auto max-w-3xl">
         <Reveal>
-          <SectionLabel>07 — Contact</SectionLabel>
+          <SectionLabel>08 — Contact</SectionLabel>
           <h2 className="font-display text-3xl font-bold sm:text-4xl md:text-5xl">
             Let's <span className="text-gradient">build something.</span>
           </h2>
