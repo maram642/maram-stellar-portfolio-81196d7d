@@ -16,6 +16,8 @@ import {
   Sparkles,
   Send,
   Download,
+  Award,
+  ExternalLink,
 } from "lucide-react";
 import { NeuralBackground } from "@/components/NeuralBackground";
 import { CursorGlow } from "@/components/CursorGlow";
@@ -58,6 +60,7 @@ function Index() {
         <Skills />
         <Projects />
         <Education />
+        <Certifications />
         <Extracurricular />
         <Languages />
         <Contact />
@@ -259,9 +262,7 @@ function About() {
         <div className="mt-10 grid gap-8 md:grid-cols-[1.4fr_1fr] md:items-start">
           <Reveal delay={0.1}>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              Second-year Data Engineering student at <span className="text-foreground">ENET'Com, Sfax</span>.
-              I build end-to-end AI solutions — from transformer-based NLP pipelines to optimization solvers.
-              Actively seeking an internship in <span className="text-foreground">ML, Data Engineering, or AI</span>.
+              Second-year Data Engineering student at <span className="text-foreground">ENET'Com, Sfax</span> — passionate about building AI systems that actually work in the real world. I've developed a transformer-based NLP chatbot during my internship at Draexlmaier, and built an intelligent route optimization agent using LLMs and OR-Tools. I don't just study AI — I build with it. Currently looking for an internship where I can take on real challenges in <span className="text-foreground">ML, Data Engineering and AI Engineering</span>.
             </p>
             <div className="mt-6 flex flex-wrap gap-4 text-sm text-muted-foreground">
               <span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4" /> Monastir, Tunisia</span>
@@ -458,6 +459,63 @@ function Education() {
   );
 }
 
+/* ---------- Certifications ---------- */
+const CERTS = [
+  {
+    title: "Introduction to Generative AI",
+    issuer: "Google",
+    date: "Jan 2025",
+    id: "13571292",
+  },
+  {
+    title: "Intro to ChatGPT and Generative AI",
+    issuer: "365 Data Science",
+    date: "Nov 2024",
+    id: "CC-13E3AB6AB8",
+  },
+];
+
+function Certifications() {
+  return (
+    <section id="certifications" className="relative px-6 py-32">
+      <div className="mx-auto max-w-5xl">
+        <Reveal>
+          <SectionLabel>05 — Certifications</SectionLabel>
+          <h2 className="font-display text-3xl font-bold sm:text-4xl md:text-5xl">
+            Always <span className="text-gradient">learning.</span>
+          </h2>
+        </Reveal>
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
+          {CERTS.map((c, i) => (
+            <Reveal key={c.title} delay={i * 0.1}>
+              <div className="h-full rounded-2xl border border-border/60 bg-card/40 p-6 backdrop-blur hover-glow">
+                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[color:var(--purple)]/20 to-[color:var(--teal)]/20 text-[color:var(--teal)]">
+                  <Award className="h-5 w-5" />
+                </div>
+                <h3 className="font-display text-lg font-semibold">{c.title}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{c.issuer} · {c.date}</p>
+                <p className="mt-2 text-xs text-muted-foreground">Credential ID: {c.id}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+        <Reveal delay={0.2}>
+          <div className="mt-8">
+            <a
+              href="https://www.linkedin.com/in/maram-boughammoura-492a62338/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-5 py-2.5 text-sm backdrop-blur hover-glow"
+            >
+              <ExternalLink className="h-4 w-4 text-[color:var(--purple)]" /> View all on LinkedIn
+            </a>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 /* ---------- Extracurricular ---------- */
 function Extracurricular() {
   const items = [
@@ -478,7 +536,7 @@ function Extracurricular() {
     <section id="extracurricular" className="relative px-6 py-32">
       <div className="mx-auto max-w-5xl">
         <Reveal>
-          <SectionLabel>05 — Beyond Class</SectionLabel>
+          <SectionLabel>06 — Beyond Class</SectionLabel>
           <h2 className="font-display text-3xl font-bold sm:text-4xl md:text-5xl">
             Communities & <span className="text-gradient">leadership.</span>
           </h2>
@@ -514,7 +572,7 @@ function Languages() {
     <section id="languages" className="relative px-6 py-32">
       <div className="mx-auto max-w-5xl">
         <Reveal>
-          <SectionLabel>06 — Languages</SectionLabel>
+          <SectionLabel>07 — Languages</SectionLabel>
           <h2 className="font-display text-3xl font-bold sm:text-4xl md:text-5xl">
             Speaking <span className="text-gradient">three worlds.</span>
           </h2>
@@ -545,7 +603,7 @@ function Contact() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,oklch(0.22_0.06_190/0.5),transparent_70%)]" />
       <div className="relative mx-auto max-w-3xl">
         <Reveal>
-          <SectionLabel>07 — Contact</SectionLabel>
+          <SectionLabel>08 — Contact</SectionLabel>
           <h2 className="font-display text-3xl font-bold sm:text-4xl md:text-5xl">
             Let's <span className="text-gradient">build something.</span>
           </h2>
