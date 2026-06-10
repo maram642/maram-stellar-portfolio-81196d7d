@@ -261,9 +261,7 @@ function About() {
         <div className="mt-10 grid gap-8 md:grid-cols-[1.4fr_1fr] md:items-start">
           <Reveal delay={0.1}>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              Second-year Data Engineering student at <span className="text-foreground">ENET'Com, Sfax</span>.
-              I build end-to-end AI solutions — from transformer-based NLP pipelines to optimization solvers.
-              Actively seeking an internship in <span className="text-foreground">ML, Data Engineering, or AI</span>.
+              Second-year Data Engineering student at <span className="text-foreground">ENET'Com, Sfax</span> — passionate about building AI systems that actually work in the real world. I've developed a transformer-based NLP chatbot during my internship at Draexlmaier, and built an intelligent route optimization agent using LLMs and OR-Tools. I don't just study AI — I build with it. Currently looking for an internship where I can take on real challenges in <span className="text-foreground">ML, Data Engineering and AI Engineering</span>.
             </p>
             <div className="mt-6 flex flex-wrap gap-4 text-sm text-muted-foreground">
               <span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4" /> Monastir, Tunisia</span>
