@@ -16,6 +16,8 @@ import {
   Sparkles,
   Send,
   Download,
+  Award,
+  ExternalLink,
 } from "lucide-react";
 import { NeuralBackground } from "@/components/NeuralBackground";
 import { CursorGlow } from "@/components/CursorGlow";
