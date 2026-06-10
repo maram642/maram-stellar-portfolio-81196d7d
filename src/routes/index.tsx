@@ -466,12 +466,14 @@ const CERTS = [
     issuer: "Google",
     date: "Jan 2025",
     id: "13571292",
+    url: "https://www.cloudskillsboost.google/public_profiles/243ff919-c6da-436d-973f-e9720e22e5c0/badges/13571292",
   },
   {
     title: "Intro to ChatGPT and Generative AI",
     issuer: "365 Data Science",
     date: "Nov 2024",
     id: "CC-13E3AB6AB8",
+    url: "https://learn.365datascience.com/certificates/CC-13E3AB6AB8/",
   },
 ];
 
