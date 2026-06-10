@@ -497,6 +497,14 @@ function Certifications() {
                 <h3 className="font-display text-lg font-semibold">{c.title}</h3>
                 <p className="mt-1 text-sm text-muted-foreground">{c.issuer} · {c.date}</p>
                 <p className="mt-2 text-xs text-muted-foreground">Credential ID: {c.id}</p>
+                <a
+                  href={c.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-4 inline-flex items-center gap-1.5 rounded-full border border-border/60 bg-background/40 px-3 py-1.5 text-xs font-medium text-muted-foreground transition-all hover:border-[color:var(--purple)] hover:text-foreground"
+                >
+                  <ExternalLink className="h-3.5 w-3.5" /> View Certificate
+                </a>
               </div>
             </Reveal>
           ))}
