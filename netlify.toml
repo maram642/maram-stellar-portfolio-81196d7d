@@ -1,28 +1,12 @@
 [build]
   command = "bun run build"
-  publish = "dist"
+  publish = "dist/client"
 
 [build.environment]
   NITRO_PRESET = "netlify"
 
-[[plugins]]
-  package = "@netlify/plugin-lighthouse"
-
-# Enable prerendering for static pages
-[build.processing]
-  skip_processing = false
-
-[build.processing.html]
-  pretty_urls = true
-
-# SPA fallback for client-side routing
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/.netlify/functions/server"
   status = 200
-
-# Prerender directive — Netlify will prerender pages for bots/crawlers
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Prerender = "true"
+  force = true
