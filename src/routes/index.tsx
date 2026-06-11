@@ -509,18 +509,6 @@ function Certifications() {
             </Reveal>
           ))}
         </div>
-        <Reveal delay={0.2}>
-          <div className="mt-8">
-            <a
-              href="https://www.linkedin.com/in/maram-boughammoura-492a62338/"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-5 py-2.5 text-sm backdrop-blur hover-glow"
-            >
-              <ExternalLink className="h-4 w-4 text-[color:var(--purple)]" /> View all on LinkedIn
-            </a>
-          </div>
-        </Reveal>
       </div>
     </section>
   );
